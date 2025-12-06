@@ -13,17 +13,32 @@ import Footer from "../Components/Footer";
 const RootLayout = () => {
     return (
         <div className="">
-            <Navbar></Navbar>
+            <Navbar />
             <div className="w-full space-y-24 sm:space-y-28 sm:w-9/12 mx-auto mb-20 sm:mb-36">
-                <Hero></Hero>
-                <About></About>
-                <TackStack></TackStack>
-                <Skills></Skills>
-                <Services></Services>
-                <Projects></Projects>
-                <Contact></Contact>
+                <section id="home">
+                    <Hero />
+                </section>
+                <section id="about">
+                    <About />
+                </section>
+                <section id="techstack">
+                    <TackStack />
+                </section>{" "}
+                {/* or "skills" if preferred */}
+                <section id="skills">
+                    <Skills />
+                </section>
+                <section id="services">
+                    <Services />
+                </section>
+                <section id="projects">
+                    <Projects />
+                </section>
+                <section id="contact">
+                    <Contact />
+                </section>
             </div>
-            <Footer></Footer>
+            <Footer />
         </div>
     );
 };
