@@ -55,6 +55,7 @@ const Projects = () => {
                                                     <a
                                                         class="inline-flex items-center gap-2 px-3 bg-gray-800 dark:bg-gray-700 text-white font-semibold rounded-lg shadow-sm hover:bg-gray-900 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors "
                                                         href={project.server}
+                                                        target="blank"
                                                     >
                                                         <FaGithub></FaGithub>
                                                         Server
@@ -62,7 +63,8 @@ const Projects = () => {
                                                 )}
                                                 <a
                                                     class="inline-flex items-center gap-2 px-3 py-1.5 bg-primary text-white font-semibold rounded-lg shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors"
-                                                    href="#"
+                                                    href={project.live}
+                                                    target="blank"
                                                 >
                                                     Live Demo
                                                 </a>
@@ -104,7 +106,7 @@ const projects = [
         ],
     },
     {
-        id: 1,
+        id: 2,
         projectName: "QuickCart",
         projectImage: "./project-2.png",
         server: "https://github.com/nafiz512/Quick-Cart-Server",
@@ -122,5 +124,32 @@ const projects = [
             "Axios",
             "Vercel",
         ],
+    },
+    {
+        id: 3,
+        projectName: "GreenNest – A UI project with Firebse Auth",
+        projectImage: "./project-3.png",
+        client: "https://github.com/nafiz512/GreenNest-React-firsebase-auth",
+        live: "https://greennest-2d277.web.app",
+        description:
+            "GreenNest is a modern React.js web application designed for plant lovers to explore, learn, and purchase indoor plants.",
+        tackStack: [
+            "React.js",
+            "TailwindCSS",
+            "Firebase",
+            "Framer Motion",
+            "React Router",
+            "DaisyUI",
+        ],
+    },
+    {
+        id: 4,
+        projectName: "GreenNest – A UI project with Firebse Auth",
+        projectImage: "./project-4.png",
+        client: "https://github.com/nafiz512/Hero-React-App",
+        live: "https://hero-app-nafiz.netlify.app/",
+        description:
+            "It focuses on clean UI, smooth navigation, and an engaging user experience — built with React, Tailwind CSS, DaisyUI, and React Router.",
+        tackStack: ["React.js", "TailwindCSS", "React Router", "DaisyUI"],
     },
 ];
