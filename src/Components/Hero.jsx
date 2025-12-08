@@ -79,13 +79,19 @@ const Hero = () => {
                                 </SocialLink>
 
                                 <SocialLink className="top-[35%] right-[-4%] lg:right-[-6%]">
-                                    <a href="https://github.com/nafiz512">
+                                    <a
+                                        href="https://github.com/nafiz512"
+                                        target="blank"
+                                    >
                                         <FaGithub className="text-2xl"></FaGithub>
                                     </a>
                                 </SocialLink>
 
                                 <SocialLink className="top-[60%] right-[-1%] lg:right-[-5%]">
-                                    <a href="https://www.linkedin.com/in/nafiz-muntasir/">
+                                    <a
+                                        href="https://www.linkedin.com/in/nafiz-muntasir/"
+                                        target="blank"
+                                    >
                                         <FaLinkedin className="text-2xl"></FaLinkedin>
                                     </a>
                                 </SocialLink>
