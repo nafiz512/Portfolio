@@ -60,11 +60,12 @@ const Contact = () => {
 
         emailjs
             .sendForm(
-                "service_gvlj3wq",
-                "template_i6zqmjp",
+                import.meta.env.VITE_EMAILJS_SERVICE,
+                import.meta.env.VITE_EMAILJS_TEMPLATE,
                 formRef.current,
-                "BkoSC7p4Z0I3exU1z"
+                import.meta.env.VITE_EMAILJS_KEY
             )
+
             .then(
                 () => {
                     setStatus("Message sent successfully! ✅");
