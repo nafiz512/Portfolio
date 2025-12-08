@@ -1,68 +1,77 @@
-import React from "react";
-import { FaArrowUp } from "react-icons/fa6";
+import React, { useState, useEffect } from "react";
+import { FaArrowUp, FaArrowDown } from "react-icons/fa6";
 
 const Footer = () => {
+    const [isAtTop, setIsAtTop] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            requestAnimationFrame(() => {
+                setIsAtTop(window.scrollY <= 5);
+            });
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll();
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    const scrollToTarget = () => {
+        if (isAtTop) {
+            const aboutSection = document.getElementById("about");
+            if (aboutSection) {
+                aboutSection.scrollIntoView({ behavior: "smooth" });
+            } else {
+                window.scrollTo({
+                    top: window.innerHeight,
+                    behavior: "smooth",
+                });
+            }
+        } else {
+            const homeSection =
+                document.getElementById("home") || document.body;
+            homeSection.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
-        <div>
-            <footer
-                class="bg-gray-100 dark:bg-gray-900 py-4 relative"
-                id="footer"
-            >
-                <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="flex flex-col items-center justify-center space-y-2">
-                        <div class="flex items-center space-x-4">
-                            <a class="group" href="#">
-                                <div class="w-10 h-10 border border-gray-400 dark:border-gray-500 rounded-full flex items-center justify-center transition-colors duration-300 group-hover:bg-gray-800 dark:group-hover:bg-gray-200">
-                                    <svg
-                                        aria-hidden="true"
-                                        class="h-5 w-5 fill-current text-gray-600 dark:text-gray-300 group-hover:text-white dark:group-hover:text-black"
-                                        viewBox="0 0 16 16"
-                                    >
-                                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
-                                    </svg>
-                                </div>
-                            </a>
-                            <a class="group" href="#">
-                                <div class="w-10 h-10 border border-gray-400 dark:border-gray-500 rounded-full flex items-center justify-center transition-colors duration-300 group-hover:bg-gray-800 dark:group-hover:bg-gray-200">
-                                    <svg
-                                        aria-hidden="true"
-                                        class="h-6 w-6 fill-current text-gray-600 dark:text-gray-300 group-hover:text-white dark:group-hover:text-black"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path>
-                                    </svg>
-                                </div>
-                            </a>
-                            <a class="group" href="#">
-                                <div class="w-10 h-10 border border-gray-400 dark:border-gray-500 rounded-full flex items-center justify-center transition-colors duration-300 group-hover:bg-gray-800 dark:group-hover:bg-gray-200">
-                                    <svg
-                                        aria-hidden="true"
-                                        class="h-6 w-6 fill-current text-gray-600 dark:text-gray-300 group-hover:text-white dark:group-hover:text-black"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            clip-rule="evenodd"
-                                            d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.165 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.03 1.595 1.03 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z"
-                                            fill-rule="evenodd"
-                                        ></path>
-                                    </svg>
-                                </div>
-                            </a>
-                        </div>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">
-                            © 2025 Copyright: Nafiz Muntasir
-                        </p>
+        <footer
+            className="bg-gray-100 dark:bg-gray-900 py-4 relative"
+            id="footer"
+        >
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex flex-col items-center justify-center space-y-2">
+                    <div className="flex items-center space-x-4">
+                        <a className="group" href="#">
+                            <div className="w-10 h-10 border border-gray-400 dark:border-gray-500 rounded-full flex items-center justify-center transition-colors duration-300 group-hover:bg-gray-800 dark:group-hover:bg-gray-200">
+                                <svg
+                                    aria-hidden="true"
+                                    className="h-5 w-5 fill-current text-gray-600 dark:text-gray-300 group-hover:text-white dark:group-hover:text-black"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"></path>
+                                </svg>
+                            </div>
+                        </a>
+
+                        {/* Add other icons similarly */}
                     </div>
+
+                    <p className="text-sm text-gray-500 dark:text-gray-400">
+                        © 2025 Copyright: Nafiz Muntasir
+                    </p>
                 </div>
-                <a href="#">
-                    <button class="fixed bottom-8 right-8 hover:bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg bg-slate-800 dark:hover:bg-slate-600 transition-colors duration-300">
-                        <span class="material-symbols-outlined">
-                            <FaArrowUp></FaArrowUp>
-                        </span>
-                    </button>
-                </a>
-            </footer>
-        </div>
+            </div>
+
+            {/* Correct Floating Button */}
+            <button
+                onClick={scrollToTarget}
+                className="fixed bottom-8 right-8 hover:bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg bg-slate-800 dark:hover:bg-slate-600 transition-all duration-300 hover:scale-110"
+            >
+                {isAtTop ? <FaArrowDown size={20} /> : <FaArrowUp size={20} />}
+            </button>
+        </footer>
     );
 };
 

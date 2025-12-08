@@ -37,7 +37,6 @@ const Hero = () => {
                                 MERN stack Developer
                             </p>
 
-                            {/* Buttons */}
                             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                                 <a
                                     download="Nafiz_Muntasir_Resume.pdf"
@@ -71,19 +70,30 @@ const Hero = () => {
                             {/* Social Links using the new SocialLink component */}
                             <div className="absolute z-20 w-full h-full">
                                 <SocialLink className="top-[12%] right-[15%] sm:right-[10%] lg:right-[2%]">
-                                    <FaFacebook className="text-2xl"></FaFacebook>
+                                    <a
+                                        href="https://www.facebook.com/nafiz.muntasir.245464"
+                                        target="blank"
+                                    >
+                                        <FaFacebook className="text-2xl"></FaFacebook>
+                                    </a>
                                 </SocialLink>
 
                                 <SocialLink className="top-[35%] right-[-4%] lg:right-[-6%]">
-                                    <FaGithub className="text-2xl"></FaGithub>
+                                    <a href="https://github.com/nafiz512">
+                                        <FaGithub className="text-2xl"></FaGithub>
+                                    </a>
                                 </SocialLink>
 
                                 <SocialLink className="top-[60%] right-[-1%] lg:right-[-5%]">
-                                    <FaLinkedin className="text-2xl"></FaLinkedin>
+                                    <a href="https://www.linkedin.com/in/nafiz-muntasir/">
+                                        <FaLinkedin className="text-2xl"></FaLinkedin>
+                                    </a>
                                 </SocialLink>
 
                                 <SocialLink className="top-[77%]  right-[14%] lg:right-[5%]">
-                                    <FaInstagram className="text-2xl"></FaInstagram>
+                                    <a href="https://www.instagram.com/nafizmuntasir512/">
+                                        <FaInstagram className="text-2xl"></FaInstagram>
+                                    </a>
                                 </SocialLink>
                             </div>
                         </div>
