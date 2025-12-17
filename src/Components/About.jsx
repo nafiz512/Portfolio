@@ -70,10 +70,15 @@ const About = () => {
                             </p>
                             {/* Buttons */}
                             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                                <button className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 border border-slate-400 dark:border-slate-500 rounded-full font-medium text-slate-800 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
-                                    <span>Get Resume</span>
-                                    <FaDownload></FaDownload>
-                                </button>
+                                <a
+                                    download="Nafiz Muntasir Resume.pdf"
+                                    href="./Nafiz_Muntasir_Resume.pdf"
+                                >
+                                    <button className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 border border-slate-400 dark:border-slate-500 rounded-full font-medium text-slate-800 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                                        <span>Get Resume</span>
+                                        <FaDownload></FaDownload>
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </div>

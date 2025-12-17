@@ -39,7 +39,7 @@ const Hero = () => {
 
                             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                                 <a
-                                    download="Nafiz_Muntasir_Resume.pdf"
+                                    download="Nafiz Muntasir Resume.pdf"
                                     href="./Nafiz_Muntasir_Resume.pdf"
                                 >
                                     <button className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3 border border-slate-400 dark:border-slate-500 rounded-full font-medium text-slate-800 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
@@ -63,8 +63,8 @@ const Hero = () => {
                             {/* Portrait Image */}
                             <img
                                 alt="profile image"
-                                className="relative rounded-full z-10 max-w-[75%] sm:max-w-[80%] lg:max-w-full max-h-[380px] object-contain"
-                                src="./profile.jpg"
+                                className="relative object-center rounded-full z-10 max-w-[75%] sm:max-w-[80%] lg:max-w-full max-h-[380px] object-contain"
+                                src="./6.jpg"
                             />
 
                             {/* Social Links using the new SocialLink component */}
