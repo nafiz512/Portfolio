@@ -85,6 +85,27 @@ export default Projects;
 
 const projects = [
     {
+        id: 0,
+        projectName: "BloodServe – Blood Donation Application",
+        projectImage: "./project-0.png",
+        server: "https://github.com/nafiz512/BloodServe-Server",
+        client: "https://github.com/nafiz512/BloodServe",
+        live: "https://bloodserve-69cba.web.app/",
+        description:
+            "A full-stack MERN project with role-base access (Admin, Donor, Volunteer). It connects blood donors with recipients, enables donation request management, and includes a secure funding system.",
+        tackStack: [
+            "React.js",
+            "TailwindCSS",
+            "Firebase Auth",
+            "Node.js",
+            "Express.js",
+            "MongoDB",
+            "Axios",
+            "Stripe",
+            "JWT",
+        ],
+    },
+    {
         id: 1,
         projectName: "TravelEase",
         projectImage: "./project-1.png",
